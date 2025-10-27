@@ -5,6 +5,7 @@ const app = express();
 const { swaggerUi, swaggerSpec } = require('../src/config/swagger'); // ✅ Import Swagger
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
+const newbookingRoutes = require("./routes/newbookingRoutes");
 
 app.use(express.json());
 
@@ -12,7 +13,8 @@ app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api/auth', authRoutes);
-app.use('/api/user', userRoutes)
+app.use('/api/user', userRoutes);
+app.use("/api/newbooking", newbookingRoutes);
 
 
 const PORT = process.env.PORT || 5000;
