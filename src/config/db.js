@@ -6,7 +6,7 @@ const connectionString = process.env.DATABASE_URL;
 
 const pool = new Pool({
   connectionString,
-  // ssl: { rejectUnauthorized: false } // Uncomment only if using hosted DBs (like Render, Neon, etc.)
+  ssl: { rejectUnauthorized: false } // Uncomment only if using hosted DBs (like Render, Neon, etc.)
 });
 
 // ✅ Test connection once on startup
